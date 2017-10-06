@@ -55,28 +55,41 @@ class Teachers extends React.Component {
     let teacherList = [
       {
         img: "img/avion.png",
-        name: "Botero",
+        name: "Angie McAngular",
         information:
           "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
       },
       {
         img: "img/avion.png",
-        name: "Botero",
+        name: "NodeStradamus",
         information:
           "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
       },
       {
         img: "img/avion.png",
-        name: "Botero",
+        name: "Ecma Scriptnstuff",
         information:
           "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
       },
       {
         img: "img/avion.png",
-        name: "Botero",
+        name: "Geo 'Lo' Cation",
         information:
           "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+      },
+      {
+        img: "img/avion.png",
+        name: "Jay Query",
+        information:
+          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+      },
+      {
+        img: "img/avion.png",
+        name: "Json Babel",
+        information:
+          "All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job."
       }
+
     ];
     switch (route) {
       case "css":
