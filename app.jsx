@@ -1,4 +1,4 @@
-class Home extends React.Component {
+class Home extends React.Component { //home: para ser referenciada dentro de APP
 	render() {
 		return (
 			<div className="main-content home">
@@ -16,7 +16,7 @@ class Home extends React.Component {
 	}
 }
 
-class About extends React.Component {
+class About extends React.Component { // about: para ser referenciada dentro de APP
 	render() {
 		return (
 			<div className="main-content">
@@ -28,8 +28,19 @@ class About extends React.Component {
 		);
 	}
 }
+class Teachers extends React.Component{ // teacher:para ser referenciada dentro de APP
+	render() {
+		return (
+			<div className="main-content">
+				<h2><strong>teacher</strong></h2>
+				<p>.</p>
+			</div>
+		);
+	}
+}
 
-class Repos extends React.Component {
+
+class Repos extends React.Component { // repos: para ser referenciada dentro de APP
 	render() {
 		const {route} = this.props;
 		let CurrentList = null;
@@ -72,7 +83,7 @@ class Repos extends React.Component {
 	}
 }
 
-class App extends React.Component {
+class App extends React.Component { // AP. Etiqueta general
 	constructor(props) {
 		super(props);
 		this.state ={
@@ -95,13 +106,16 @@ class App extends React.Component {
 		let Child;
 		let propsForRepos = null;
 		switch (this.state.route) {
-			case '/about':
+			case '/about': // about
 				Child = About;
 				break;
-			case '/repos':
+			case '/repos': // repos
 				Child = Repos;
 				break;
-			case '/repos/html':
+			case '/teachers': // teachers
+				Child = Teachers;
+				break;	
+			case '/repos/html': // respos
 				Child = Repos;
 				propsForRepos = 'html';
 				break;
@@ -127,30 +141,26 @@ class App extends React.Component {
 			
                <ul className="main-nav">
 			   		<li>
-                     <a aria-current = "true" href="#/home" className="active"><strong>Home</strong></a>
+                     <a aria-current = "true" href="#/home" className="active"><strong>HOME</strong></a>
                    </li>{' '}
                   <li>
-                     <a aria-current = "false" href="#/about"><strong>About</strong></a>
+                     <a aria-current = "false" href="#/about"><strong>ABOUT</strong></a>
                   </li>{' '}
                   <li>
-                     <a aria-current = "false" href="#/repos"><strong>Teachers</strong></a>
+                     <a aria-current = "false" href="#/teachers"><strong>TEACHERS</strong></a>
                   </li>
 				  <li>
-                     <a aria-current = "false" href="#/repos"><strong>Repos</strong></a>
+                     <a aria-current = "false" href="#/repos"><strong>REPOS</strong></a>
                   </li>
                </ul>{' '}
 
 
             </menu>
-	         {
-	         	propsForRepos?
-			         <Child route = {propsForRepos} />
-		         :
-			         <Child />
-	         }
-         </div>
+	         { propsForRepos? <Child route = {propsForRepos} /> : <Child />} 
+
+         </div> // repos
 		);
 	}
 }
-ReactDOM.render(< App  />,
+ReactDOM.render(<App  />,
 document.getElementById("container"));
