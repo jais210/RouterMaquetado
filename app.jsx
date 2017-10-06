@@ -1,3 +1,83 @@
+const teacherList = [
+  {
+    img: "img/angieMcAngular.png",
+    name: "Angie McAngular",
+    information:
+      "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+  },
+  {
+    img: "img/geoLoCarion.png",
+    name: "Gelo 'Lo' Cation",
+    information:
+      "Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code."
+  },
+  {
+    img: "img/jayQuery.png",
+    name: "Jay Query",
+    information:
+      "Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher."
+  },
+  {
+    img: "img/nodeStradamus.png",
+    name: "NodeStradamus",
+    information:
+      "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps."
+  },
+  {
+    img: "img/ecmaScriptnstuff.png",
+    name: "Ecma Scriptnstuff",
+    information:
+      "Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript."
+  },
+  {
+    img: "img/jsonBabel.png",
+    name: "Json Babel",
+    information:
+      "All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job."
+  }
+
+];
+
+const coursesList = [
+  {
+    img: "img/angie.png",
+    name: "Angie McAngular",
+    information:
+      "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+  },
+  {
+    img: "img/ecma.png",
+    name: "NodeStradamus",
+    information:
+      "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps."
+  },
+  {
+    img: "img/geo.png",
+    name: "Geo 'Lo' Cation",
+    information:
+      "Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code."
+  },
+  {
+    img: "img/jay.png",
+    name: "Geo 'Lo' Cation",
+    information:
+      "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+  },
+  {
+    img: "img/json.png",
+    name: "Jay Query",
+    information:
+      "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
+  },
+  {
+    img: "img/nodestradamus.png",
+    name: "NodeStradamus",
+    information:
+      "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps."
+  }
+
+];
+
 class Home extends React.Component {
   //home: para ser referenciada dentro de APP
   render() {
@@ -50,95 +130,29 @@ class About extends React.Component {
 }
 class Teachers extends React.Component {
   // teacher:para ser referenciada dentro de APP
-  render() {
-    const { route } = this.props;
-    let teacherList = [
-      {
-        img: "img/avion.png",
-        name: "Angie McAngular",
-        information:
-          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
-      },
-      {
-        img: "img/avion.png",
-        name: "NodeStradamus",
-        information:
-          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
-      },
-      {
-        img: "img/avion.png",
-        name: "Ecma Scriptnstuff",
-        information:
-          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
-      },
-      {
-        img: "img/avion.png",
-        name: "Geo 'Lo' Cation",
-        information:
-          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
-      },
-      {
-        img: "img/avion.png",
-        name: "Jay Query",
-        information:
-          "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
-      },
-      {
-        img: "img/avion.png",
-        name: "Json Babel",
-        information:
-          "All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job."
-      }
-
-    ];
-    switch (route) {
-      case "css":
-        teacherList = ["How to Make a CSS", "HTML CSS"].map((item, index) => {
-          return <li key={index}> {item} </li>;
-        });
-        break;
-      case "javascript":
-        CurrentList = ["How to Make a JS", "HTML JS"].map((item, index) => {
-          return <li key={index}> {item} </li>;
-        });
-        break;
-      default:
-        //'html'
-        CurrentList = [
-          "How to Make a Website",
-          "HTML Forms"
-        ].map((item, index) => {
-          return <li key={index}> {item} </li>;
-        });
-        break;
-    }
-    return (
-      <div className="main-content courses">
-        <div className="course-header group">
+  
+  render() 
+    {
+      return (
+        <div className="main-content">
           <h2>
-            <strong>REPOS</strong>
+            <strong>Teachers</strong>
           </h2>
-          <ul className="course-nav">
-            <li>
-              <a href="#/repos/html">HTML</a>
-            </li>
-            <li>
-              <a href="#/repos/css">CSS</a>
-            </li>
-            <li>
-              <a href="#/repos/javascript">JavaScript</a>
-            </li>
-          </ul>
-
-          <ul>{CurrentList}</ul>
+          <div>
+              {teacherList.map((item, index)=>{
+                return (<div key={index}>
+                    <span><img src={item.img}/></span> 
+                    <span>{item.name}</span>
+                    <div>{item.information}</div>
+                  </div>
+                  );
+              })}
+          </div>
         </div>
-
-        {/* Write routes here... */}
-      </div>
-    );
-  }
-}
-
+      );
+    }
+  }  
+    
 class Repos extends React.Component {
   // repos: para ser referenciada dentro de APP
   render() {
@@ -171,17 +185,14 @@ class Repos extends React.Component {
           <h2>
             <strong>REPOS</strong>
           </h2>
-          <ul className="course-nav">
-            <li>
-              <a href="#/repos/html">HTML</a>
-            </li>
-            <li>
-              <a href="#/repos/css">CSS</a>
-            </li>
-            <li>
-              <a href="#/repos/javascript">JavaScript</a>
-            </li>
-          </ul>
+          <div className="course-nav">            
+              <button><a href="#/repos/html">HTML</a></button>
+                       
+              <button><a href="#/repos/css">CSS</a></button>
+                        
+              <button><a href="#/repos/javascript">JavaScript</a></button>
+            
+          </div>
 
           <ul>{CurrentList}</ul>
         </div>
@@ -277,4 +288,5 @@ class App extends React.Component {
     );
   }
 }
+
 ReactDOM.render(<App />, document.getElementById("container"));
