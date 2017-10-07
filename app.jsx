@@ -139,16 +139,17 @@ class Teachers extends React.Component {
           <h2>
             <strong>Teachers</strong>
           </h2>
-          <div>
+          <ul className='group'>
               {teacherList.map((item, index)=>{
-                return (<div key={index}>
-                    <img src={item.img}/>
-                    <span>{item.name}</span>
-                    <div>{item.information}</div>
-                  </div>
+                return (
+                  <li className="teacher" key={index}>
+                    <img className="teacher-img img-responsive" src={item.img}/>
+                    <h3>{item.name}</h3>
+                    <p>{item.information}</p>
+                  </li>
                   );
               })}
-          </div>
+          </ul>
         </div>
       );
     }
