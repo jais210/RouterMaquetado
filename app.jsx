@@ -7,7 +7,7 @@ const teacherList = [
       "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!"
   },
   {
-    img: "img/geoLoCarion.png",
+    img: "img/geoLoCation.png",
     name: "Gelo 'Lo' Cation",
     information:
       "Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code."
@@ -84,11 +84,11 @@ class Home extends React.Component {
   render() {
     return (
       <div className="main-content home">
-        <span>
+        
           <h2>
             <strong>Front End Course Directory</strong>
           </h2>
-        </span>
+        
         <p>
           This fun directory is a project for the <em>React Router Basics</em>{" "}
           course on Treehouse.
@@ -184,7 +184,7 @@ class Repos extends React.Component {
       <div className="main-content courses">
         <div className="course-header group">
           <h2>
-            <strong>REPOS</strong>
+            <strong>COURSES</strong>
           </h2>
           <div className="course-nav">            
               <button><a href="#/repos/html">HTML</a></button>
@@ -254,13 +254,12 @@ class App extends React.Component {
     }
     return (
       // html
-      <div data-reatroot className="container">
+      <div data-reatroot className="content">
         <header>
-          <span className="icn-logo">
-            <i className="material-icons">logo</i>
+          <span className="icono">
+            <i className="material-icons">code</i>
           </span>
-        </header>{" "}
-        <menu>
+               
           <ul className="main-nav">
             <li>
               <a aria-current="true" href="#/home" className="active">
@@ -279,11 +278,11 @@ class App extends React.Component {
             </li>
             <li>
               <a aria-current="false" href="#/repos">
-                <strong>REPOS</strong>
+                <strong>COURSES</strong>
               </a>
             </li>
           </ul>{" "}
-        </menu>
+      </header>
         {propsForRepos ? <Child route={propsForRepos} /> : <Child />}
       </div> // repos
     );
